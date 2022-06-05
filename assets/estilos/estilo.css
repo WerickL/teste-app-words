@@ -10,7 +10,8 @@ body{
   background-size: cover;
 }
 .container{
-  max-width: 98vw;
+  max-width: 375px;
+  margin: auto;
 }
 section{
   height:100%;
