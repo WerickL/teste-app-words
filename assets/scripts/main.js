@@ -1,5 +1,11 @@
-let input = document.querySelector("#frase")
+let frase = document.querySelector("#input");
+let palavras = new Array;
 function showFrase() {
-  console.log(input.value)
-  input.value = ''
+  palavras.push(frase.value)
+  frase.value = ''
+}
+function revealSort(){
+  for(let palavra of palavras){
+    console.log(palavra)
+  }
 }

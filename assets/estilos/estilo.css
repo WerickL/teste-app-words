@@ -2,9 +2,9 @@
 :root{
   box-sizing: border-box;
   font-size: 62.5%;
+  --primary-color: darkcyan;
 }
 body{
-  
   height: 100vh;
     background-image: url(../imagens/ceu-estrelado.jpg);
   background-size: cover;
@@ -23,29 +23,32 @@ section main {
   align-items: center;
   height: 100%;
 }
+input[type=search]::placeholder{
+  color: whitesmoke;
+}
 input[type=search] {
   display: block;
   width: 80vw;
   height:5rem;
   background-color: gray;
   border-radius: 3rem;
-  margin-bottom: 10vh;
+  margin-bottom: 8vh;
   padding-inline: 2rem;
   border: none;
   color: black;
 }
 input[type=search]:focus{
-  outline: 2px solid darkcyan;
+  outline: 2px solid var(--primary-color);
 }
-input[type=search]::placeholder{
-  color: whitesmoke;
-}
-.button{
+.button, #play{
   height: 4rem;
   width: 8rem;
-  background-color: darkcyan;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 3rem;
-  margin-bottom: 10vh;
+  margin-bottom: 3vh;
+}
+#play{
+  background-color: lightskyblue;
 }
