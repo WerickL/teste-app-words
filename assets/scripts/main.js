@@ -22,11 +22,12 @@ function attPalavra(key, value){
   lista.set(key, ++value)
 }
 
-function showFrase() {
 
-}
 function revealSort(){
-  for(let palavras of lista){
-    console.log(palavras)
+  let sortedMap = new Map([...lista.entries()].sort((a,b)=>b[1]-a[1]))
+  const ordenados = Array.from(sortedMap)
+ 
+  for(let i =0; i < Math.min(10, ordenados.length); ++i){
+    console.log(ordenados[i][0]);
   }
 }

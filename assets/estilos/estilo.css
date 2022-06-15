@@ -51,4 +51,5 @@ input[type=search]:focus{
 }
 #play{
   background-color: lightskyblue;
+  margin-bottom: 30vh;
 }
