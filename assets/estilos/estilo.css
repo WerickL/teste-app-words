@@ -3,6 +3,7 @@
   box-sizing: border-box;
   font-size: 62.5%;
   --primary-color: darkcyan;
+  --secundary-color: lightskyblue;
 }
 body{
   height: 100vh;
@@ -22,6 +23,7 @@ section main {
   justify-content: center;
   align-items: center;
   height: 100%;
+  
 }
 input[type=search]::placeholder{
   color: whitesmoke;
@@ -30,7 +32,7 @@ input[type=search] {
   display: block;
   width: 80vw;
   height:5rem;
-  background-color: gray;
+  background-color: slategray;
   border-radius: 3rem;
   margin-bottom: 8vh;
   padding-inline: 2rem;
@@ -40,16 +42,16 @@ input[type=search] {
 input[type=search]:focus{
   outline: 2px solid var(--primary-color);
 }
+.buttons{
+  display: flex;
+  gap: 12vw;
+  margin-bottom: 30vh;
+}
 .button, #play{
   height: 4rem;
-  width: 8rem;
+  width: 12rem;
   background-color: var(--primary-color);
   color: white;
   border: none;
   border-radius: 3rem;
-  margin-bottom: 3vh;
-}
-#play{
-  background-color: lightskyblue;
-  margin-bottom: 30vh;
 }
