@@ -1,7 +1,7 @@
 //<Variáveis 
-let entrada = document.querySelector("#input");
+const entrada = document.querySelector("#input");
 var lista = new Map();
-
+const screen = document.querySelector(".show-words")
 
 //Função principal 
 function newPalavra(palavra){
@@ -41,10 +41,19 @@ function sortMap(mapInsort){
  }
  
  
+ 
 function showWords(){
+  
   let orderedMap = sortMap(lista);
   let orderedArray = toArray(orderedMap);
   for(let i = 0; i < Math.min(10, orderedArray.length); ++i){
-    console.log(orderedArray[i][0]);
+    let p = document.createElement('p')
+    p.innerText = orderedArray[i][0];
+    screen.append(p);
   }
+}
+
+function clearScreen(){
+  let p = document.getElementsByTagName('p');
+  p.innerText = '';
 }

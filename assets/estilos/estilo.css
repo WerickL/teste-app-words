@@ -12,18 +12,17 @@ body{
 }
 .container{
   max-width: 375px;
+  height: 100%;
   margin: auto;
-}
-section{
-  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 section main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  
 }
 input[type=search]::placeholder{
   color: whitesmoke;
@@ -37,7 +36,7 @@ input[type=search] {
   margin-bottom: 8vh;
   padding-inline: 2rem;
   border: none;
-  color: black;
+  color: white;
 }
 input[type=search]:focus{
   outline: 2px solid var(--primary-color);
@@ -45,7 +44,7 @@ input[type=search]:focus{
 .buttons{
   display: flex;
   gap: 12vw;
-  margin-bottom: 30vh;
+  margin-bottom: 10vh;
 }
 .button, #play{
   height: 4rem;
@@ -54,4 +53,21 @@ input[type=search]:focus{
   color: white;
   border: none;
   border-radius: 3rem;
+}
+.show-words{
+  width: 80vw;
+  min-height: 15vh;
+  border-radius: 50px;
+  border-radius: 20px;
+  background: slategray;
+  box-shadow:  18px 18px 79px #000000;
+  color: ghostwhite;
+  text-align: center;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.show-words p{
+  font-size: 1.5rem
 }
