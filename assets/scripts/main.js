@@ -1,18 +1,22 @@
 //<Variáveis 
 const entrada = document.querySelector("#input");
 var lista = new Map();
-const screen = document.querySelector(".show-words")
+const screen = document.querySelector(".show-words");
 
 //Função principal 
 function newPalavra(palavra){
-  palavra = palavra.trim()
-  if (repeated(palavra)){
-    let valueOf = lista.get(palavra);
-    attPalavra(palavra, valueOf)
+  if (isEmpty(palavra)) {
+    entrada.value = ''
   }else{
-     addPalavra(palavra) 
+    palavra = palavra.trim().toLowerCase();
+    if (repeated(palavra)){
+      let valueOf = lista.get(palavra);
+      attPalavra(palavra, valueOf)
+    }else{
+       addPalavra(palavra) 
+    }
+    entrada.value = ''
   }
-   entrada.value = ''
 }
 
 //Funções componentes 
@@ -29,7 +33,14 @@ function repeated(palavra){
 function attPalavra(key, value){
   lista.set(key, ++value)
 }
-
+function isEmpty(palavra){
+  if (palavra.length === 0) {
+    return true;
+  }else{
+    return false;
+  }
+  
+}
 
 function sortMap(mapInsort){
   return new Map([...mapInsort.entries()].sort((a,b)=>b[1]-a[1]))
@@ -43,7 +54,7 @@ function sortMap(mapInsort){
  
  
 function showWords(){
-  
+  clearScreen()
   let orderedMap = sortMap(lista);
   let orderedArray = toArray(orderedMap);
   for(let i = 0; i < Math.min(10, orderedArray.length); ++i){
@@ -52,8 +63,10 @@ function showWords(){
     screen.append(p);
   }
 }
-
 function clearScreen(){
-  let p = document.getElementsByTagName('p');
-  p.innerText = '';
+  const tagsP = document.getElementsByTagName('p');
+  for(;tagsP.length > 0;){
+    tagsP[0].remove();
+  }
+  
 }

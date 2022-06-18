@@ -29,7 +29,7 @@ input[type=search]::placeholder{
 }
 input[type=search] {
   display: block;
-  width: 80vw;
+  width: 80%;
   height:5rem;
   background-color: slategray;
   border-radius: 3rem;
@@ -69,5 +69,5 @@ input[type=search]:focus{
   gap: .5rem;
 }
 .show-words p{
-  font-size: 1.5rem
+  font-size: 1.5rem;
 }
