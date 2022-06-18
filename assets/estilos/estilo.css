@@ -2,72 +2,109 @@
 :root{
   box-sizing: border-box;
   font-size: 62.5%;
-  --primary-color: darkcyan;
-  --secundary-color: lightskyblue;
+  --primary-color: #FFD782;
+  --secundary-color: #46A8A7;
+  --result-screen:#EAEBED;
+  --text-color:#334F64;
 }
 body{
-  height: 100vh;
-    background-image: url(../imagens/ceu-estrelado.jpg);
-  background-size: cover;
+  background-color: #17181C;
 }
 .container{
-  max-width: 375px;
-  height: 100%;
-  margin: auto;
+  max-width: 700px;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: auto;
+  background-image: url(https://images.pexels.com/photos/5912583/pexels-photo-5912583.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 section main {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  align-self: center;
+}
+.entrances{
+  margin-block: 10vh;
+  width: 100%;
+  flex: 1;
 }
 input[type=search]::placeholder{
   color: whitesmoke;
+  font-weight: 200;
+  font-size: 1.4rem;
 }
 input[type=search] {
   display: block;
+  max-width: 500px;
   width: 80%;
+  margin: auto;
   height:5rem;
-  background-color: slategray;
+  background-color: var(--secundary-color);
   border-radius: 3rem;
   margin-bottom: 8vh;
   padding-inline: 2rem;
   border: none;
-  color: white;
+  color: var(--result-screen);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 input[type=search]:focus{
-  outline: 2px solid var(--primary-color);
+  outline: 1px solid var(--text-color);
 }
 .buttons{
   display: flex;
-  gap: 12vw;
-  margin-bottom: 10vh;
+  justify-content: center;
+  gap: 12%;
+  
 }
 .button, #play{
   height: 4rem;
   width: 12rem;
   background-color: var(--primary-color);
-  color: white;
-  border: none;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  font-size: 1.3rem;
+  font-weight: 700;
   border-radius: 3rem;
 }
 .show-words{
-  width: 80vw;
-  min-height: 15vh;
-  border-radius: 50px;
-  border-radius: 20px;
-  background: slategray;
-  box-shadow:  18px 18px 79px #000000;
-  color: ghostwhite;
-  text-align: center;
+  display: none;
+  width: 80%;
+  border-radius: 1rem;
+  background: var(--result-screen);
+  box-shadow:  18px 18px 79px #00000056;
+  color: var(--text-color);
   padding: 1rem;
+  margin-block: 10vh;
+  margin-inline: 2rem;
+  text-align: center;
+}
+.show-words.visible{
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  flex: 1;
+}
+.show-words h2{
+  font-weight: 700;
+  font-size: 1.8rem;
 }
 .show-words p{
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+}
+@media (min-width:700px) {
+  .container{
+    max-width: 1000px;
+    background-image: url(https://images.pexels.com/photos/5912586/pexels-photo-5912586.jpeg);
+  }
+  section main{
+    flex-direction: row-reverse;
+  }
+  .entrances{
+  }
 }

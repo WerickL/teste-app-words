@@ -3,7 +3,7 @@ const entrada = document.querySelector("#input");
 var lista = new Map();
 const screen = document.querySelector(".show-words");
 
-//Função principal 
+//Funções principais 
 function newPalavra(palavra){
   if (isEmpty(palavra)) {
     entrada.value = ''
@@ -17,6 +17,11 @@ function newPalavra(palavra){
     }
     entrada.value = ''
   }
+}
+function enter(event) {
+  if (event.key === "Enter") {
+    newPalavra(entrada.value)
+  } 
 }
 
 //Funções componentes 
@@ -54,7 +59,9 @@ function sortMap(mapInsort){
  
  
 function showWords(){
+  if (lista.size > 0) {
   clearScreen()
+  screen.classList.add("visible")
   let orderedMap = sortMap(lista);
   let orderedArray = toArray(orderedMap);
   for(let i = 0; i < Math.min(10, orderedArray.length); ++i){
@@ -62,11 +69,11 @@ function showWords(){
     p.innerText = orderedArray[i][0];
     screen.append(p);
   }
+  }   
 }
 function clearScreen(){
   const tagsP = document.getElementsByTagName('p');
   for(;tagsP.length > 0;){
     tagsP[0].remove();
   }
-  
 }
