@@ -29,13 +29,13 @@ section main {
   align-self: center;
 }
 .entrances{
-  margin-block: 10vh;
+  margin-block: 5vh;
   width: 100%;
   flex: 1;
 }
 input[type=search]::placeholder{
   color: whitesmoke;
-  font-weight: 200;
+  font-weight:300;
   font-size: 1.4rem;
 }
 input[type=search] {
@@ -80,7 +80,7 @@ input[type=search]:focus{
   box-shadow:  18px 18px 79px #00000056;
   color: var(--text-color);
   padding: 1rem;
-  margin-block: 10vh;
+  margin-block: 5vh;
   margin-inline: 2rem;
   text-align: center;
 }
