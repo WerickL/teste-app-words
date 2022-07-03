@@ -1,7 +1,7 @@
 @charset "utf-8";
 /*#ffc43d*/
 :root {
-  --secundary-color: #083D77;
+  --primary-color: #083D77;
   --background-color1: #06dda0;
   --background-color2: #1b9aaa;
   --white:#EAEBED;
@@ -39,26 +39,26 @@ body {
 .new-task input{
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid var(--secundary-color);
+  border: 1px solid var(--primary-color);
   font-size: 16px;
   flex: 3;
-  color: var(--secundary-color);
+  color: var(--primary-color);
 }
 input::placeholder{
-  color: var(--secundary-color);
+  color: var(--primary-color);
   font-weight:300;
 }
 input:focus{
-  outline: 2px solid var(--secundary-color);
+  outline: 2px solid var(--primary-color);
   border: 1px solid var(--white);
 }
 .new-task button{
   padding: 10px;
   border-radius:5px ;
   font-size: 16px;
-  background-color: var(--secundary-color);
+  background-color: var(--primary-color);
   color: var(--white);
-  border: 2px solid var(--secundary-color);
+  border: 2px solid var(--primary-color);
   flex: 1;
   cursor: pointer;
 }
@@ -74,7 +74,7 @@ input:focus{
 }
 #tasks p{
   font-size: 18px;
-  color: var(--secundary-color);
+  color: var(--primary-color);
   font-weight: 500;
 }
 p.completed{
@@ -87,7 +87,7 @@ p.completed{
   padding-block:5px;
 }
 .task i{
-  color: var(--secundary-color);
+  color: var(--primary-color);
   font-size: 20px;
   cursor: pointer;
   padding: 5px 10px;
