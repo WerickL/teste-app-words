@@ -28,35 +28,26 @@ function enter(event) {
 function addPalavra(palavra){
   lista.set(palavra,1);
 }
-
-
 function repeated(palavra){
   return lista.has(palavra)
 }
-
-
 function attPalavra(key, value){
   lista.set(key, ++value)
 }
 function isEmpty(palavra){
+  palavra = palavra.trim()
   if (palavra.length === 0) {
     return true;
   }else{
     return false;
   }
-  
 }
-
 function sortMap(mapInsort){
   return new Map([...mapInsort.entries()].sort((a,b)=>b[1]-a[1]))
 }
-
-
  function toArray(map){
    return Array.from(map)
  }
- 
- 
  
 function showWords(){
   if (lista.size > 0) {

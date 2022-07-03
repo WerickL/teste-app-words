@@ -5,6 +5,7 @@
   --background-color1: #06dda0;
   --background-color2: #1b9aaa;
   --white:#EAEBED;
+  --error:#FF312E;
 }
 * {
   padding: 0;
@@ -25,6 +26,7 @@ body {
   padding: 30px;
   border: 2px solid var(--white);
   border-radius: 5px;
+  width: 600px;
 }
 .new-task{
   padding: 40px 30px;
@@ -37,9 +39,18 @@ body {
 .new-task input{
   padding: 10px;
   border-radius: 5px;
-  border: 2px solid var(--secundary-color);
+  border: 1px solid var(--secundary-color);
   font-size: 16px;
   flex: 3;
+  color: var(--secundary-color);
+}
+input::placeholder{
+  color: var(--secundary-color);
+  font-weight:300;
+}
+input:focus{
+  outline: 2px solid var(--secundary-color);
+  border: 1px solid var(--white);
 }
 .new-task button{
   padding: 10px;
@@ -49,15 +60,45 @@ body {
   color: var(--white);
   border: 2px solid var(--secundary-color);
   flex: 1;
+  cursor: pointer;
 }
-#tasks.visible{
+#tasks{
+  display: none;
   background-color: var(--white);
   padding: 20px;
   margin-top: 30px;
   border-radius: 5px;
 }
-#tasks.visible p{
-  font-size: 14px;
+#tasks.visible{
+  display: block;
+}
+#tasks p{
+  font-size: 18px;
   color: var(--secundary-color);
   font-weight: 500;
+}
+p.completed{
+  text-decoration: line-through;
+}
+.task{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block:5px;
+}
+.task i{
+  color: var(--secundary-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+input.isEmpty{
+  border: 1px solid var(--error);
+}
+input.isEmpty::placeholder{
+  color: var(--error);
+}
+input.isEmpty:focus{
+  outline: 2px solid  var(--error);
+  border: 1px solid var(--white);
 }

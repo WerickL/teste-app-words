@@ -8,18 +8,18 @@
   --white:#EAEBED;
 }
 body{
-  background-color: #17181C;
+  background-image: linear-gradient(
+    to right,
+    var(--background-color1),
+    var(--background-color2)
+  );
 }
 .container{
   max-width: 700px;
   min-height: 100vh;
   display: flex;
   margin: auto;
-  background-image: linear-gradient(
-    to right,
-    var(--background-color1),
-    var(--background-color2)
-  );
+  
 }
 section main {
   width: 100%;
@@ -42,26 +42,26 @@ input[type=search]::placeholder{
 input[type=search] {
   display: block;
   max-width: 500px;
-  width: 85%;
+  width: 80%;
   margin: auto;
   height:5rem;
   background-color:  var(--white);
   border-radius: .5rem;
   margin-bottom: 8vh;
   padding-inline: 2rem;
-  border: 2px solid var(--main-color);
+  border: 1px solid var(--main-color);
   color: var(--main-color);
   font-size: 1.4rem;
   font-weight: 700;
 }
 input[type=search]:focus{
-  outline: 1px solid var(--main-color);
+  outline: 2px solid var(--main-color);
+  border: 1px solid var(--white);
 }
 .buttons{
   display: flex;
-  justify-content: space-around;
-  
-  
+  justify-content: center;
+  gap: 10%;
 }
 .button, #play{
   height: 4rem;
@@ -99,12 +99,10 @@ input[type=search]:focus{
   font-size: 1.6rem;
 }
 @media (min-width:700px) {
-  .container{
+  .container {
     max-width: 1000px;
   }
   section main{
     flex-direction: row-reverse;
-  }
-  .entrances{
   }
 }
