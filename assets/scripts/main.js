@@ -8,7 +8,7 @@ function newPalavra(palavra){
   if (isEmpty(palavra)) {
     entrada.value = ''
   }else{
-    palavra = palavra.trim().toLowerCase();
+    palavra = palavra.trim().toUpperCase();
     if (repeated(palavra)){
       let valueOf = lista.get(palavra);
       attPalavra(palavra, valueOf)
@@ -57,7 +57,7 @@ function showWords(){
   let orderedArray = toArray(orderedMap);
   for(let i = 0; i < Math.min(10, orderedArray.length); ++i){
     let p = document.createElement('p')
-    p.innerText = orderedArray[i][0];
+    p.innerText =  orderedArray[i][1] + ": " + orderedArray[i][0];
     screen.append(p);
   }
   }   
