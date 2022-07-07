@@ -1,36 +1,43 @@
 const entrada = document.querySelector("#Tinput");
 const showScreen = document.querySelector("#tasks");
 
+updateTasks();
 
-
-function newTask(task){
+function newTask(task, isCompleted){
   if (isEmpty(task)) {
     entrada.value = ''
     entrada.classList.add("isEmpty")
     return
   }else{
     task = task.trim().toLowerCase();
-    addTask(task) 
+    addTask(task, isCompleted) 
     entrada.value = ''
+    return
   }
 }
-function addTask(task){
-  let p = createParagraph(task);
+
+function addTask(task, isCompleted){
+  let p = createParagraph(task, isCompleted);
   let i = createIcoTrash()
-  
   let div = document.createElement("div")
   div.classList.add("task")
   div.append(p)
   div.append(i)
   showScreen.append(div);
-  showTaksArea()
+  showTaskArea()
+  attLocalStorage()
 }
-function createParagraph(texto) {
+
+function createParagraph(texto, isCompleted) {
   let p = document.createElement('p')
   p.innerText = texto;
   p.addEventListener("click", ()=>{
     p.classList.toggle("completed")
+    attLocalStorage()
   })
+  if (isCompleted) {
+    p.classList.add("completed")
+  }
   return p
 }
 function createIcoTrash() {
@@ -40,11 +47,12 @@ function createIcoTrash() {
   i.addEventListener("click", ()=>{
     let pai = i.parentElement
     pai.remove()
-    showTaksArea()
+    attLocalStorage()
+    showTaskArea()
   })
   return i;
 }
-function showTaksArea(params) {
+function showTaskArea() {
   if(showScreen.getElementsByTagName("div").length === 0){
       showScreen.classList.remove("visible")
   }else  {showScreen.classList.add("visible")}
@@ -66,4 +74,27 @@ function isEnter(event) {
   if (event.key === "Enter") {
     newTask(entrada.value)
   } 
+}
+
+//Local storage
+function attLocalStorage() {
+  const tasks = showScreen.childNodes;
+  const localStorageTasks = [...tasks].map((task) =>{
+    const content = task.firstChild;
+    const isCompleted = content.classList.contains("completed");
+    return {description : content.innerText, isCompleted};
+  })
+  localStorage.setItem("task", JSON.stringify(localStorageTasks))
+}
+
+function rescueLocalStorageContent() {
+  let rescued = localStorage.getItem("task")
+  return JSON.parse(rescued)
+}
+function updateTasks() {
+  const tasks = rescueLocalStorageContent();
+  for (const task of tasks) {
+    console.log(task.description);
+    addTask(task.description, task.isCompleted)
+  }
 }
