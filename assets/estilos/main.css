@@ -61,7 +61,7 @@ a p{
   transition: 100;
 }
 .widget i{
-  font-size: 8rem;
+  font-size: 7rem;
   color: var(--white);
 }
 a:hover > i{
