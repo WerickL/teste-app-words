@@ -2,27 +2,28 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./assets/estilos/estilo.css">
-  <title>Acumulador de Palavras</title>
-  <link rel="shortcut icon" href="./assets/imagens/favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/estilos/main.css">
+  <title>Home</title>
 </head>
-
 <body>
-  <section class="container">
-  <main action="" method="">
-    <section class="entrances">
-      <input type="search" onkeypress="enter(event)" placeholder="Digite a palavra aqui" id="input">
-      <div class="buttons">
-        <button class="button" onclick="newPalavra(entrada.value)" button>Enviar</button>
-        <button id="play" onclick="showWords()">Ver todas </button>
-      </div>
-    </section>
-    <section class="show-words">
-      <h2>Palavras mais comuns</h2>
-    </section>
-  </main>
-  </section>
-  <script src="./assets/scripts/main.js"></script>
+  <div class="container">
+    <div class="widget words-app left">
+      <a href="./words.html">
+        <i class="fa-solid fa-arrow-down-wide-short"></i>
+          <p><abbr title="acumula palavras repetida e te mostra as mais frequentes"></abbr>Contador e palavras</abbr></p> 
+      </a>
+    </div>
+    <div class="widget tasks-app right">
+      <a href="./tasks.html">
+        <i class="fa-solid fa-list-check"></i>
+        <p>Lista de Tarefas</p>
+      </a>
+    </div>
+    <div class="widget future-1 left"><a href="#"><i class="fa-solid fa-spinner"></i><p>Em desenvolvimento</p></a></div>
+    <div class="widget future-2 right"><a href="#"><i class="fa-solid fa-spinner"></i><p>Em desenvolvimento</p></a></div>
+  </div>
+  <script src="https://kit.fontawesome.com/78828b6748.js" crossorigin="anonymous"></script>
 </body>
 </html>

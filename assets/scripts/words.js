@@ -8,7 +8,7 @@ function newPalavra(palavra){
   if (isEmpty(palavra)) {
     entrada.value = ''
   }else{
-    palavra = palavra.trim().toLowerCase();
+    palavra = palavra.trim().toUpperCase();
     if (repeated(palavra)){
       let valueOf = lista.get(palavra);
       attPalavra(palavra, valueOf)
@@ -28,35 +28,26 @@ function enter(event) {
 function addPalavra(palavra){
   lista.set(palavra,1);
 }
-
-
 function repeated(palavra){
   return lista.has(palavra)
 }
-
-
 function attPalavra(key, value){
   lista.set(key, ++value)
 }
 function isEmpty(palavra){
+  palavra = palavra.trim()
   if (palavra.length === 0) {
     return true;
   }else{
     return false;
   }
-  
 }
-
 function sortMap(mapInsort){
   return new Map([...mapInsort.entries()].sort((a,b)=>b[1]-a[1]))
 }
-
-
  function toArray(map){
    return Array.from(map)
  }
- 
- 
  
 function showWords(){
   if (lista.size > 0) {
@@ -66,7 +57,7 @@ function showWords(){
   let orderedArray = toArray(orderedMap);
   for(let i = 0; i < Math.min(10, orderedArray.length); ++i){
     let p = document.createElement('p')
-    p.innerText = orderedArray[i][0];
+    p.innerText =  orderedArray[i][1] + ": " + orderedArray[i][0];
     screen.append(p);
   }
   }   
