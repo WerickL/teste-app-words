@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/estilos/estilo-words.css">
+  <title>Acumulador de Palavras</title>
+  <link rel="shortcut icon" href="./assets/imagens/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <section class="container">
+    <main action="" method="">
+      <section class="entrances">
+        <input type="search" onkeypress="enter(event)" placeholder="Digite a palavra aqui" id="input">
+        <div class="buttons">
+          <button class="button" onclick="newPalavra(entrada.value)" button>Enviar</button>
+          <button id="play" onclick="showWords()">Ver todas </button>
+        </div>
+      </section>
+      <section class="show-words">
+        <h2>Palavras mais comuns</h2>
+      </section>
+    </main>
+  </section>
+  <script src="./assets/scripts/words.js"></script>
+</body>
+</html>
